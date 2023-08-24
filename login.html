@@ -92,8 +92,8 @@
 </head>
 
 <body>
-    <div class="container" onsubmit="valid()">
-        <form class="registration-form">
+    <div class="container">
+        <form class="registration-form " onsubmit="valid()">
             <span class="head">Registration Form</span>
             <label for="username">Username</label>
             <input type="text" id="username" name="username" placeholder="Enter your username" required>
@@ -109,8 +109,7 @@
 
 
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" placeholder="Enter your password"
-                required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <span class="error" id="pass"></span>
 
             <label for="con-password">Confirm Password</label>
@@ -120,6 +119,10 @@
             <button type="submit" onclick="valid()">Register</button>
         </form>
     </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+
     <script>
 
         function valid() {
@@ -128,7 +131,7 @@
             var password = document.getElementById("password").value;
             var con_pass = document.getElementById("con-password").value;
             var num = document.getElementById("number").value;
-                const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
+            const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}$/;
 
             // console.log(email);
             if (username == '') {
@@ -143,8 +146,9 @@
             else if (num.length !== 10) {
                 document.getElementById("num").innerHTML = "Enter Ten Numbers  ";
             }
-            else if (passwordPattern.test(password)) {
+            else if (!passwordPattern.test(password)) {
                 document.getElementById("pass").innerHTML = "Must contain at least one  number and one uppercase and lowercase letter, and at least 8 or more characters";
+                // return false;
             }
             else if (password !== con_pass) {
                 document.getElementById("con-pass").innerHTML = "Password doesn't Match";
