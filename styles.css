@@ -14,7 +14,7 @@ body {
     background-color: rgb(255, 255, 255);
     border-radius: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-    padding: 20px;
+    padding: 0px 50px;
     width: 300px;
     display: flex;
     flex-direction: row;
@@ -35,7 +35,8 @@ label {
 }
 
 
-input:focus {
+input:focus
+{
     background-color: rgb(163, 206, 241);
 }
 
@@ -43,14 +44,19 @@ input:focus {
     color: black;
 }
 
-input {
+input
+{
     /* width: 100%; */
     padding: 10px;
     border: 1px solid #000000;
     border-radius: 5px;
-    margin-bottom: 2px;
+    /* margin-bottom: 15px; */
     background-color: rgb(217, 216, 216);
 }
+/* 
+textarea {
+    height: 200px;
+} */
 
 button {
     background-color: rgb(39, 76, 119);
@@ -60,6 +66,7 @@ button {
     padding: 10px 20px;
     cursor: pointer;
     margin-top: 20px;
+    margin-bottom: 30px;
     transition: background-color 0.3s ease;
 }
 
@@ -75,6 +82,14 @@ button:hover {
     font-weight: bold;
     /* color: ;px */
 }
+/* 
+fieldset {
+    border: 1px solid #000000;
+    background-color: rgb(217, 216, 216);
+    display: flex;
+    font-weight: bold;
+    margin-top: 10px;
+} */
 
 .error {
     color: red;
